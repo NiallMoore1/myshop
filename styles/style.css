@@ -85,6 +85,13 @@ footer, header, hgroup, menu, nav, section {
 }
 
 
+#form{
+	float:right;
+	padding-right:8px;
+	line-height:40px;
+}
+
+
 
 .content-wrapper{
 	width:1000px;
