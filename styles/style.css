@@ -58,6 +58,33 @@ footer, header, hgroup, menu, nav, section {
 	color:white;
 }
 
+#menu{
+	padding:0;
+	margin:0;
+	line-height:40px;
+	float:left;
+}
+
+#menu li{
+	list-style:none;
+	display:inline;
+}
+
+#menu a {
+	text-decoration:none;
+	color:white;
+	padding:12px;
+	margin:5px;
+	font-size:18px;
+	font-family:comic sans ms;
+}
+
+#menu a:hover{
+	color:orange;
+	font-weight:bold;
+}
+
+
 
 .content-wrapper{
 	width:1000px;
