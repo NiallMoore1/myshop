@@ -27,19 +27,18 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 	body {background-color: skyblue;}
-
-/*added background black*/	
-.main-wrapper{
+	
+.main_wrapper {
 	width:1000px;
 	height:1000px;
 	margin:auto;
-	background:black;
+	background:pink;
 }
 
-.header-wrapper{
+.header_wrapper{
 	width:1000px;
-	height:150px;
-	margin:auto; 
+	height:100px;
+	margin:auto;
 	background-color:white;
 }
 
@@ -59,37 +58,7 @@ footer, header, hgroup, menu, nav, section {
 	color:white;
 }
 
-#menu{
-	padding:0;
-	margin:0;
-	line-height:40px;
-	float:left;
-}
 
-#menu li{
-	list-style:none;
-	display:inline;
-}
-
-#menu a {
-	text-decoration:none;
-	color:white;
-	padding:12px;
-	margin:5px;
-	font-size:18px;
-	font-family:comic sans ms;
-}
-
-#menu a:hover{
-	color:orange;
-	font-weight:bold;
-}
-
-#form{
-	float:right;
-	padding-right:8px;
-	line-height:40px;
-}
 .content-wrapper{
 	width:1000px;
 	height:800px;
@@ -100,122 +69,26 @@ footer, header, hgroup, menu, nav, section {
 
 #content-area{
 	width:800px;
+	height:800px;
 	float:right;
-	background:pink;
+	background-color:pink;
 	margin:0;
 	padding:0;
 }
 
 #sidebar{
 	width:200px;
+	height:800px;
 	float:left;
 	background-color:black;
 }
 
-#sidebar-title{
-	background:white;
-	color:black;
-	font-size:22px;
-	font-family:arial;
-	padding-left:10px;
-	text-align:center;
-}
-
-#cats{
-	padding:0;
-	text-align:center;
-    color: #FFF;
-}
-
-#cats li{
-	list-style:none;
-	display:block;
-	margin:5px;
-}
-
-#cats a{
-	color:white;
-	padding:8px;
-	margin:5px;
-	text-decoration:none;
-	font-size:18px;
-	font-family:comic Sans ms;
-}
-
-#cats a:hover{
-	color:orange;
-	font-weight:bold;
-	text-decoration:none;
-}
-
-#brands{
-	padding:0;
-	text-align:center;
-    color: #FFF;
-}
-
-#brands li{
-	list-style:none;
-	display:block;
-	margin:5px;
-}
-
-#brands a{
-	color:white;
-	padding:8px;
-	margin:5px;
-	text-decoration:none;
-	font-size:18px;
-	font-family:comic Sans ms;
-}
-
-#brands a:hover{
-	color:orange;
-	font-weight:bold;
-	text-decoration:none;
-}
-		
-	/*adding style for images on home page */	
-#products_box{
-	width:780px;
-	text-allign:center;
-	margin-left:30px;
-	margin-bottom:10px;
-	
-}
-
-#single_product {
-	float:left;
-	margin-left:30px;
-	padding:10px;
-	
-}
-
-#single_product img {
-	border:2px solid blue;
-}	
-		
-/*end style for images on home page */	
-
-#shopping_cart {
-	width:800px;
-	height:50px;
-	background:black;
-	color:white;
-}
-	
 #footer{
 	width:1000px;
 	height:100px;
 	clear:both;
 	background-color:gray;
 }
-
-
-
-
-
-
 
 
 
