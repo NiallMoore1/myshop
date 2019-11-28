@@ -117,6 +117,45 @@ footer, header, hgroup, menu, nav, section {
 	background-color:black;
 }
 
+
+#sidebar-title{
+	background:white;
+	color:black;
+	font-size:22px;
+	font-family:arial;
+	padding-left:10px;
+	text-align:center;
+}
+
+#cats{
+	padding:0;
+	text-align:center;
+    color: #FFF;
+}
+
+#cats li{
+	list-style:none;
+	display:block;
+	margin:5px;
+}
+
+#cats a{
+	color:white;
+	padding:8px;
+	margin:5px;
+	text-decoration:none;
+	font-size:18px;
+	font-family:comic Sans ms;
+}
+
+#cats a:hover{
+	color:orange;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+
 #footer{
 	width:1000px;
 	height:100px;
