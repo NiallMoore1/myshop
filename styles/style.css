@@ -26,13 +26,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-	body {background-color: skyblue;}
+	body {background-color:skyblue;}
 	
 .main_wrapper {
 	width:1000px;
 	height:1000px;
 	margin:auto;
-	background:pink;
+	background:red;
 }
 
 .header_wrapper{
@@ -72,7 +72,7 @@ footer, header, hgroup, menu, nav, section {
 
 #menu a {
 	text-decoration:none;
-	color:white;
+	color:yellow;
 	padding:12px;
 	margin:5px;
 	font-size:18px;
@@ -130,7 +130,7 @@ footer, header, hgroup, menu, nav, section {
 #cats{
 	padding:0;
 	text-align:center;
-    color: #FFF;
+    color: #fff;
 }
 
 #cats li{
@@ -149,10 +149,38 @@ footer, header, hgroup, menu, nav, section {
 }
 
 #cats a:hover{
+	color:red;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#brands{
+	padding:0;
+	text-align:center;
+    color: #FFF;
+}
+
+#brands li{
+	list-style:none;
+	display:block;
+	margin:5px;
+}
+
+#brands a{
+	color:white;
+	padding:8px;
+	margin:5px;
+	text-decoration:none;
+	font-size:18px;
+	font-family:comic Sans ms;
+}
+
+#brands a:hover{
 	color:orange;
 	font-weight:bold;
 	text-decoration:none;
 }
+		
 
 
 
@@ -161,6 +189,7 @@ footer, header, hgroup, menu, nav, section {
 	height:100px;
 	clear:both;
 	background-color:gray;
+	float:right;
 }
 
 
