@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 	width:1000px;
 	height:1000px;
 	margin:auto;
-	background:red;
+	background:pink;
 }
 
 .header_wrapper{
@@ -72,7 +72,7 @@ footer, header, hgroup, menu, nav, section {
 
 #menu a {
 	text-decoration:none;
-	color:yellow;
+	color:white;
 	padding:12px;
 	margin:5px;
 	font-size:18px;
@@ -95,15 +95,15 @@ footer, header, hgroup, menu, nav, section {
 
 .content-wrapper{
 	width:1000px;
-	height:800px;
-	margin:0;
+
+	margin:auto;
 	padding:0;
 	background-color:pink;
 }
 
 #content-area{
 	width:800px;
-	height:800px;
+
 	float:right;
 	background-color:pink;
 	margin:0;
@@ -149,7 +149,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 #cats a:hover{
-	color:red;
+	color:orange;
 	font-weight:bold;
 	text-decoration:none;
 }
@@ -180,17 +180,35 @@ footer, header, hgroup, menu, nav, section {
 	font-weight:bold;
 	text-decoration:none;
 }
+
+/*displaying products on website */
+
+#products_box{
+	width:780px;
+	text-align:center;
+	margin-left:30px;
+	margin-bottom:10px;
+}
+
+#single_product{
+	float:left;
+	margin-left:20px;
+	padding:10px;
+	
+}
 		
-
-
 
 #footer{
 	width:1000px;
 	height:100px;
 	clear:both;
 	background-color:gray;
-	float:right;
 }
+
+
+
+
+
 
 
 
