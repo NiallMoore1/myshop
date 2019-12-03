@@ -4,7 +4,7 @@ include("functions/functions.php");
 ?>
 <html>
     <head>
-        <title> On Line Store </title>
+        <title> Myshop </title>
 		<link rel="stylesheet" href="styles/style.css" media="all">
     </head>
 <!--main container-->
@@ -57,9 +57,12 @@ include("functions/functions.php");
 <!--/navbar-->		
 <!--sidebar-->	
 				
-			
+			<div id="footer">
+								<h2 style="text-align:center; padding-top:30px;">&copy; 2019</h2>
+								</div>
+					</footer>
 			
 			</body>
 			
-		<footer id="footer">foooooooooot</footer>
+		
 </html> 

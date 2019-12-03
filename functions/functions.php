@@ -1,5 +1,5 @@
 <?php
-$con =mysqli_connect("localhost","root","","ecommerce");
+$con =mysqli_connect("localhost","root","","myshop");
 //getting the categories
 function getCats(){
     global $con;
