@@ -75,6 +75,11 @@ function getBrands(){
 					$run_cat_pro = mysqli_query($con, $get_cat_pro);
 					$counts_cats = mysqli_num_rows($run_cat_pro);
 					
+// left out 0 from =00	
+				if($count_cats=0){
+						echo "<h2>No products were found in this category</h2>";
+					}
+					
 					while($row_cat_pro=mysqli_fetch_array($run_cat_pro)){
 						
 							$pro_id = $row_cat_pro['product_id'];
@@ -104,43 +109,52 @@ function getBrands(){
 					}	
 				}
 					
-/*	
-//copy 2
-					function getpro () {
-		if(!isset($_GET['cat'])){
-			if(!isset($_GET['brand'])){
-			
-	global $con;
-	
-	$get_pro = "select * from products order by RAND() LIMIT 0,6";
-	$run_pro = mysqli_query($con, $get_pro);
-	while($row_pro=mysqli_fetch_array($run_pro)){
-		
-			$pro_id = $row_pro['product_id'];
-			$pro_cat = $row_pro['product_cat'];
-			$pro_brand = $row_pro['product_brand'];
-			$pro_title = $row_pro['product_title'];
-			$pro_price = $row_pro['product_price'];
-			$pro_image = $row_pro['product_image'];
-			
-			echo"
-				<div id='single_product'>
+
+//copy 2 
+						function getBrandPro () {
+						if(isset($_GET['brand'])){
+							$brand_id = $_GET['brand'];
+							
+					global $con;
 					
-					<h3>$pro_title</h3>
-					<img src='admin_area/product_images/$pro_image'width='200' height='200' />
-					<p><b>€ $pro_price</b></p>
+					$get_brand_pro = "select * from products where product_brand='$brand_id'";
+					$run_brand_pro = mysqli_query($con, $get_brand_pro);
+					$counts_brands = mysqli_num_rows($run_brand_pro);
 					
-					<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-					<a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add To Cart</button></a>
-				
-				</div>
-			";
-	}
-			}
-		}	
-	}
-	
-	*/
+// left out 0 from =00	
+				if($count_brands=0){
+						echo "<h2>No products were found in this category</h2>";
+					}
+					
+					while($row_brand_pro=mysqli_fetch_array($run_brand_pro)){
+						
+							$pro_id = $row_brand_pro['product_id'];
+							$pro_cat = $row_brand_pro['product_cat'];
+							$pro_brand = $row_brand_pro['product_brand'];
+							$pro_title = $row_brand_pro['product_title'];
+							$pro_price = $row_brand_pro['product_price'];
+							$pro_image = $row_brand_pro['product_image'];
+							
+						
+							echo"
+								<div id='single_product'>
+									
+									<h3>$pro_title</h3>
+									<img src='admin_area/product_images/$pro_image'width='200' height='200' />
+									<p><b>€ $pro_price</b></p>
+									
+									<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
+									<a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add To Cart</button></a>
+								
+								</div>
+
+							";
+							
+							}
+						
+					}	
+				}
+					
 	
 ?>
 

@@ -12,18 +12,18 @@ include("functions/functions.php");
 				<div class="main_wrapper">
 <!--header-->
 					<div class="header_wrapper">
-						<img id="logo" src="images/image-11.jpeg"/>
+						<a href="index.php"><img id="logo" src="images/image-11.jpeg"/></a>
 						<img id="banner" src="images/image-22.jpeg"/>
 					</div>
 <!--/header-->
 <!--navbar-->
 							<div class="menubar">
 								<ul id="menu">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">All Products</a></li>
-									<li><a href="#">My Account</a></li>
+									<li><a href="index.php">Home</a></li>
+									<li><a href="all_products.php">All Products</a></li>
+									<li><a href="customer/my_account.php">My Account</a></li>
 									<li><a href="#">Sign Up</a></li>
-									<li><a href="#">Shopping Cart</a></li>
+									<li><a href="cart.php">Shopping Cart</a></li>
 									<li><a href="#">Contact Us</a></li>
 								</ul>
 								
@@ -61,6 +61,7 @@ include("functions/functions.php");
 									<div id="products_box">
 										<?php getPro(); ?>
 										<?php getCatPro(); ?>
+										<?php getBrandPro(); ?>
 								</div>
 							</div>
 						</div>
