@@ -50,7 +50,7 @@ function getBrands(){
 				<div id='single_product'>
 					
 					<h3>$pro_title</h3>
-					<img src='admin_area/product_images/$pro_image' width='100' height='100'/>
+					<img src='admin_area/product_images/$pro_image'width='200' height='200' />
 					<p><b>€ $pro_price</b></p>
 					
 					<a href='details.php' style='float:left;'>Details</a>
@@ -63,3 +63,19 @@ function getBrands(){
 		
 	}
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

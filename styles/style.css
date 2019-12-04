@@ -184,7 +184,7 @@ footer, header, hgroup, menu, nav, section {
 /*displaying products on website */
 
 #products_box{
-	width:780px;
+	width:auto;
 	text-align:center;
 	margin-left:30px;
 	margin-bottom:10px;
@@ -193,7 +193,16 @@ footer, header, hgroup, menu, nav, section {
 #single_product{
 	float:left;
 	margin-left:20px;
-	padding:10px;
+    padding-top:25px;
+	padding-left:30px;
+	padding-right:50px;
+	width:150px;
+	display:inline-block;
+	
+}
+
+#single_product img{
+	border:3px solid black;
 	
 }
 		
