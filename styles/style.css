@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	
 .main_wrapper {
 	width:1000px;
-	height:1000px;
+	height:800px;
 	margin:auto;
 	background:pink;
 }
@@ -112,7 +112,7 @@ footer, header, hgroup, menu, nav, section {
 
 #sidebar{
 	width:200px;
-	height:800px;
+	height:650px;
 	float:left;
 	background-color:black;
 }
