@@ -53,8 +53,8 @@ function getBrands(){
 					<img src='admin_area/product_images/$pro_image'width='200' height='200' />
 					<p><b>€ $pro_price</b></p>
 					
-					<a href='details.php' style='float:left;'>Details</a>
-					<a href='index.php'><button style='float:right;'>Add To Cart</button></a>
+					<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
+					<a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add To Cart</button></a>
 				
 				</div>
 			";

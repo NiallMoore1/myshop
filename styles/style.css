@@ -201,9 +201,18 @@ footer, header, hgroup, menu, nav, section {
 	
 }
 
+
 #single_product img{
 	border:3px solid black;
 	
+}
+
+/*adding shopping cart */
+#shopping_cart{
+	width:auto;
+	height:50px;
+	background:black;
+	color:white;
 }
 		
 
