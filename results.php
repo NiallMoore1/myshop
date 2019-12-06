@@ -60,7 +60,10 @@ include("functions/functions.php");
 								</div>
 									<div id="products_box">
 												<?php
-												$get_pro = "select * from products";
+												if(isset($_GET['search'])){
+													$search_query = $_GET['user_query'];
+												
+												$get_pro = "select * from products where product_keywords like '%$search_query%'";
 												$run_pro = mysqli_query($con, $get_pro);
 												while($row_pro=mysqli_fetch_array($run_pro)){
 											
@@ -83,6 +86,7 @@ include("functions/functions.php");
 													
 													</div>
 												";
+										}
 										}
 										?>
 									</div>

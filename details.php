@@ -29,8 +29,8 @@ include("functions/functions.php");
 								
 <!--search box-->
 									<div id="form">
-										<form method="get" action="result.php" enctype="multipart/form-data">
-										<input type="text" name="user-query" placeholder="search a product"/>
+										<form method="get" action="results.php" enctype="multipart/form-data">
+										<input type="text" name="user_query" placeholder="search a product"/>
 										<input type="submit" name="search" value="search"/>
 										</form>
 									</div>
