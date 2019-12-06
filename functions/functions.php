@@ -1,5 +1,12 @@
 <?php
 $con =mysqli_connect("localhost","root","","myshop");
+
+if (mysqli_connect_errno())
+{
+	echo "The connection was not established: " . mysqli_connect_error();
+}
+
+
 //getting the categories
 function getCats(){
     global $con;
