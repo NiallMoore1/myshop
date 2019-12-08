@@ -52,12 +52,20 @@ include("functions/functions.php");
 									    </div>
 								
 							<div id="content_area"> 
+							
+							<?php cart(); ?>
+							
 								<div id="shopping_cart">
 <!--Adding Shopping Cart-->			<span style="float:right; font-size:18px; padding:5px; line-height:40px;">
 										Welcome Guest! <b style="color:yellow;">Shopping Cart</b>Total Items: Total Price:<a href="cart.php" style ="color:yellow;">Go To Cart</a>
 									</span>
 						
 								</div>
+								
+								
+<!-- Getting IP address<?php echo $ip=getIp() ;?>-->
+
+
 									<div id="products_box">
 										<?php getPro(); ?>
 										<?php getCatPro(); ?>

@@ -5,13 +5,49 @@ if (mysqli_connect_errno())
 {
 	echo "The connection was not established: " . mysqli_connect_error();
 }
+// getting the user IP address
+function getIp() {
+    $ip = $_SERVER['REMOTE_ADDR'];
+ 
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+ 
+    return $ip;
+}
 
+//creating the shopping cart
+function cart (){
+	
+if(isset($_GET['add_cart'])){
+	
+		global $con;
+		$ip = getIp();
+		$pro_id = $_GET['add_cart'];
+		$check_pro = "select * from cart where ip_add='$ip' AND p_id='$pro_id'";
+		$run_check = mysqli_query($con, $check_pro);
+		if(mysqli_num_rows($run_check)>0){
+			
+			echo"";
+		}
+		
+		else {
+			$insert_pro = "insert into cart (p_id,ip_add) values ('$pro_id','$ip')";
+			
+			$run_pro = mysqli_query($con,$insert_pro);
+			
+			echo"<script>window.open('index.php','_self')</script>";
+		}
+}
 
+}
 //getting the categories
 function getCats(){
     global $con;
 	$get_cats = "select * from categories";
-    $run_cats = mysqli_query($con, $get_cats);
+    $run_cats = mysqli_query($con, $get_cats); 
     while ($row_cats=mysqli_fetch_array($run_cats)) {
         $cat_id = $row_cats['cat_id'];
         $cat_title = $row_cats['cat_title'];
@@ -37,7 +73,7 @@ function getBrands(){
 	}
 	}
 	//displaying products on website 
-	function getpro () {
+	function getPro () {
 		if(!isset($_GET['cat'])){
 			if(!isset($_GET['brand'])){
 			
@@ -59,10 +95,10 @@ function getBrands(){
 					
 					<h3>$pro_title</h3>
 					<img src='admin_area/product_images/$pro_image'width='200' height='200' />
-					<p><b>€ $pro_price</b></p>
+					<p><b>Price:€ $pro_price</b></p>
 					
-					<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-					<a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add To Cart</button></a>
+					<a href='details.php?add_cart=$pro_id' style='float:left;'>Details</a>
+					<a href='index.php?add_cart=$pro_id'><button style='float:right;'>Add To Cart</button></a>
 				
 				</div>
 			";
@@ -82,8 +118,8 @@ function getBrands(){
 					$run_cat_pro = mysqli_query($con, $get_cat_pro);
 					$counts_cats = mysqli_num_rows($run_cat_pro);
 					
-// left out 0 from =00	
-				if($count_cats=0){
+	
+				if($count_cats==0){
 						echo "<h2>No products were found in this category</h2>";
 					}
 					
@@ -104,8 +140,8 @@ function getBrands(){
 									<img src='admin_area/product_images/$pro_image'width='200' height='200' />
 									<p><b>€ $pro_price</b></p>
 									
-									<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-									<a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add To Cart</button></a>
+									<a href='details.php?add_cart=$pro_id' style='float:left;'>Details</a>
+									<a href='index.php?add_cart=$pro_id'><button style='float:right;'>Add To Cart</button></a>
 								
 								</div>
 
@@ -128,8 +164,8 @@ function getBrands(){
 					$run_brand_pro = mysqli_query($con, $get_brand_pro);
 					$counts_brands = mysqli_num_rows($run_brand_pro);
 					
-// left out 0 from =00	
-				if($count_brands=0){
+	
+				if($count_brands==0){
 						echo "<h2>No products were found in this category</h2>";
 					}
 					
@@ -150,9 +186,9 @@ function getBrands(){
 									<img src='admin_area/product_images/$pro_image'width='200' height='200' />
 									<p><b>€ $pro_price</b></p>
 									
-									<a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-									<a href='index.php?pro_id=$pro_id'><button style='float:right;'>Add To Cart</button></a>
-								
+									<a href='details.php?add_cart=$pro_id' style='float:left;'>Details</a>
+									<a href='index.php?add_cart=$pro_id'><button style='float:right;'>Add To Cart</button></a>
+									
 								</div>
 
 							";
