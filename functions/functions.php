@@ -43,6 +43,41 @@ if(isset($_GET['add_cart'])){
 }
 
 }
+
+//getting the total added items
+ function total_items(){
+ 
+	if(isset($_GET['add_cart'])){
+	
+		global $con; 
+		
+		$ip = getIp(); 
+		
+		$get_items = "select * from cart where ip_add='$ip'";
+		
+		$run_items = mysqli_query($con, $get_items); 
+		
+		$count_items = mysqli_num_rows($run_items);
+		
+		}
+		
+		else {
+		
+		global $con; 
+		
+		$ip = getIp(); 
+		
+		$get_items = "select * from cart where ip_add='$ip'";
+		
+		$run_items = mysqli_query($con, $get_items); 
+		
+		$count_items = mysqli_num_rows($run_items);
+		
+		}
+	
+	echo $count_items;
+	}
+  
 //getting the categories
 function getCats(){
     global $con;
