@@ -1,5 +1,6 @@
 <!DOCTYPE>
 <?php
+session_start();
 include("functions/functions.php");
 ?>
 <html>
@@ -78,6 +79,7 @@ include("functions/functions.php");
 												
 												<?php 
 													global $con;
+													
 													$total = 0;
 														
 													$ip = getIp(); 
@@ -114,13 +116,27 @@ include("functions/functions.php");
 													<td><input type="checkbox" name="remove[]" value="<?php echo $pro_id;?>"/></td>
 													<td><?php echo $product_title; ?><br>
 													<img src="admin_area/product_images/<?php echo $product_image;?>" width="60" height="60"/></td>
-													<td><input type="text" size="4" name="qty"/></td>
+													<td><input type="text" size="4" name="qty" value="<?php echo $_SESSION['qty'];?>"/></td>
+													<?php
+													if(isset($_POST['update_cart'])){
+														
+														$qty = $_POST['qty'];
+														
+														$update_qty = "update cart set qty='$qty'";
+														
+														$run_qty = mysqli_query($con, $update_qty);
+														
+														$_SESSION['qty']=$qty;
+														
+														$total = $total*$qty;
+													}
+													?>
 													<td><?php echo "€". $single_price; ?></td>
 												</tr>
 													<?php }}?>
 												<tr>
 													<td colspan="4" align="right"><b>Sub Total:</b></td>
-													<td><?phpecho "€". $total;?></td>
+													<td><?php echo "€". $total;?></td>
 												</tr>
 												
 												<tr align="center">
@@ -132,6 +148,9 @@ include("functions/functions.php");
 										</form>	
 										
 										<?php
+										function updatecart(){
+											
+											global $con;
 											
 											$ip = getIp();
 											
@@ -154,7 +173,9 @@ include("functions/functions.php");
 										if(isset($_POST['continue'])){
 										
 										echo "<script>window.open('index.php','_self')</script>";										
-										}	
+										}
+										}
+											echo @$up_cart = updatecart(); 
 										
 										?>
 									</div>
