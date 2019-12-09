@@ -77,10 +77,9 @@ include("functions/functions.php");
 												</tr>
 												
 												<?php 
-												$total = 0;
-													
-													global $con; 
-													
+													global $con;
+													$total = 0;
+														
 													$ip = getIp(); 
 													
 													$sel_price = "select * from cart where ip_add='$ip'";
@@ -123,8 +122,41 @@ include("functions/functions.php");
 													<td colspan="4" align="right"><b>Sub Total:</b></td>
 													<td><?phpecho "€". $total;?></td>
 												</tr>
+												
+												<tr align="center">
+													<td colspan="2"><input type="submit" name="update_cart" value="update cart"/></td>
+													<td><input type="submit" name="continue" value="continue shopping"/></td>
+													<td><button><a href="checkout.php" style="text-decoration:none; color:black;">Checkout</a></button></td>
+												</tr>
 											</table>
 										</form>	
+										
+										<?php
+											
+											$ip = getIp();
+											
+											if(isset($_POST['update_cart'])){
+											
+											foreach($_POST['remove']as $remove_id) {
+											
+											$delete_product = "delete from cart where p_id='$remove_id' AND ip_add='$ip'";
+											
+											$run_delete = mysqli_query($con, $delete_product);
+											
+											if($run_delete){
+												
+												echo "<script>window.open('cart.php','_self')</script>";
+											}
+											}
+												
+										}
+											
+										if(isset($_POST['continue'])){
+										
+										echo "<script>window.open('index.php','_self')</script>";										
+										}	
+										
+										?>
 									</div>
 							</div>
 						</div>
