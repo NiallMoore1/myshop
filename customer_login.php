@@ -78,4 +78,7 @@ include("includes/db.php");
 		}
 	}
 	
+	
+	?>
+	
 </div>
