@@ -1,84 +1,110 @@
+<!DOCTYPE>
 <?php
-
-include("includes/db.php");
-
+include("functions/functions.php");
 ?>
+<html>
+    <head>
+        <title> Myshop </title>
+		<link rel="stylesheet" href="styles/style.css" media="all">
+    </head>
+<!--main container-->
+			<body>
+				<div class="main_wrapper">
+<!--header-->
+					<div class="header_wrapper">
+						<a href="index.php"><img id="logo" src="images/image-11.jpeg"/></a>
+						<img id="banner" src="images/image-22.jpeg"/>
+					</div>
+<!--/header-->
+<!--navbar-->
+							<div class="menubar">
+								<ul id="menu">
+									<li><a href="index.php">Home</a></li>
+									<li><a href="all_products.php">All Products</a></li>
+									<li><a href="customer/my_account.php">My Account</a></li>
+									<li><a href="#">Sign Up</a></li>
+									<li><a href="cart.php">Shopping Cart</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								
+<!--search box-->
+									<div id="form">
+										<form method="get" action="results.php" enctype="multipart/form-data">
+										<input type="text" name="user_query" placeholder="search a product"/>
+										<input type="submit" name="search" value="search"/>
+										</form>
+									</div>
+							</div>
+<!--/search box-->
+							
+								<div class="content_wraper">
+									<div id="sidebar">
+										<div id="sidebar-title">Categories</div>
+											<ul id="cats">
+												<?php getCats(); ?>
+											</ul>
+										
+										<div id="sidebar-title">Brands</div>
+											<ul id="cats">
+												<?php getBrands(); ?>
+												
+											</ul>
+									    </div>
+								
+							<div id="content_area"> 
+							
+							<?php cart(); ?>
+							
+								<div id="shopping_cart">
+<!--Adding Shopping Cart-->			<span style="float:right; font-size:18px; padding:5px; line-height:40px;">
+										 
+										<?php
+											if(isset($_SESSION['customer_email'])){
+												
+												echo "<b>Welcome:</b>" . $_SESSION['customer_email'] . "<b style='color:yellow;'>Your</b>";
+											}
+											
+											else {
+												echo "<b>Welcome Guest:</b>";
+											}
+										
+										  ?>
+										<b style="color:yellow;">Shopping Cart</b>Total Items:  <?php total_items();?>  Total Price: <?php total_price(); ?> <a href="cart.php" style ="color:yellow;">Go To Cart</a>
+									</span>
+						
+								</div>
+								
+								
+<!--checkout page code-->
 
-<div>
 
-	<form method="post" action="">
-	
-		<table width ="500" align="center" bgcolor="skyblue">
-		
-			<tr align="center">
-				<td colspan="3"><h2>Login Or Register</h2></td>
-			</tr>
-			<tr>
-				<td align="right"><b>Email:</b></td>
-				<td><input type="text" name="email" placeholder="enter email" required/></td>
-			</tr>
-		
-			<tr>
-				<td align="right"><b>Password:</b></td>
-				<td><input type="password" name="pass" placeholder="enter password" required/></td>
-			</tr>
+									<div id="products_box">
+									<?php
+									if(!isset($_SESSION["customer_email"])){
+										
+										include("customer_login.php");
+									}
+
+										else{
+											
+										include("payment.php");	
+											
+										}
+										?>
+								</div>
+							</div>
+						</div>
+					
+				</div>
+<!--/navbar-->		
+<!--sidebar-->	
+				
+			<div id="footer">
+								<h2 style="text-align:center; padding-top:30px;">&copy; 2019</h2>
+								</div>
+					</footer>
 			
-			<tr align="left">
-				<td colspan="3"><a href="checkout.php?forgot_pass">Forgot Password</a></td>
-			</tr>
-			<tr align="center">
-				<td colspan="3"><input type="submit" name="login" value="Login"/></td>
-				<td><h3 style="float:right;"><a href="customer_register.php"> Register Here</a></h3></td>
-			</tr>
+			</body>
 			
-		</table>
-			
-	</form>
-	
-	<?php 
-	if(isset($_POST['login'])){
-	
-		$c_email = $_POST['email'];
-		$c_pass = $_POST['pass'];
 		
-		$sel_c = "select * from customers where customer_pass='$c_pass' AND customer_email='$c_email'";
-		
-		$run_c = mysqli_query($con, $sel_c);
-		
-		$check_customer = mysqli_num_rows($run_c); 
-		
-		if($check_customer==0){
-		
-		echo "<script>alert('Password or email is incorrect, plz try again!')</script>";
-		exit();
-		}
-		$ip = getIp(); 
-		
-		$sel_cart = "select * from cart where ip_add='$ip'";
-		
-		$run_cart = mysqli_query($con, $sel_cart); 
-		
-		$check_cart = mysqli_num_rows($run_cart); 
-		
-		if($check_customer>0 AND $check_cart==0){
-		
-		$_SESSION['customer_email']=$c_email; 
-		
-		echo "<script>alert('You logged in successfully, Thanks!')</script>";
-		echo "<script>window.open('customer/my_account.php','_self')</script>";
-		
-		}
-		else {
-		$_SESSION['customer_email']=$c_email; 
-		
-		echo "<script>alert('You logged in successfully, Thanks!')</script>";
-		echo "<script>window.open('checkout.php','_self')</script>";
-		
-		
-		}
-	}
-	
-	
-	?>
-	
-</div>
+</html> 
