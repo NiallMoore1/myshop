@@ -55,7 +55,7 @@ include("includes/db.php");
 	<body bgcolor="skyblue">
 	
 		<form action="insert_product.php" method="post" enctype="multipart/form-data">
-			<table align="center" width="700" border="2" bgcolor ="orange">
+			<table align="center" width="795" border="2" bgcolor ="#187eae">
 				<tr align="certer">
 					<td colspan="7"><h2>Insert New Post Here</h2></td>
 				</tr>
