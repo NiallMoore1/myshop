@@ -47,6 +47,12 @@
 		
 		}
 		
+		if(isset($_GET['view_products'])){
+		
+		include("view_products.php"); 
+		
+		}
+		
 		?>
 			</div>
 	</div>
