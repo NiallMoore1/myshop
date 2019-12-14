@@ -59,6 +59,13 @@
 		
 		}
 		
+		if(isset($_GET['insert_cat'])){
+		
+		include("insert_cat.php"); 
+		
+		}
+		
+		
 		?>
 			</div>
 	</div>
