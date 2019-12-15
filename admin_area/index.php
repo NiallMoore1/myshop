@@ -95,6 +95,11 @@
 		
 		}
 		
+		if(isset($_GET['view_customers'])){
+		
+		include("view_customers.php"); 
+		
+		}
 		
 		
 		
