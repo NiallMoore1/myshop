@@ -1,3 +1,16 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['user_email'])){
+	echo "<script>window.open('login.php?not_admin=you are not an admin','_self')</script>";
+}
+
+else {
+
+
+?>
+
+
 <!DOCTYPE>
 <html>
 	<head>
@@ -110,3 +123,5 @@
 
 </body>
 </html>
+
+<?php }?>
