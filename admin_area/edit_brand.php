@@ -1,7 +1,13 @@
+<?php 
+include("includes/db.php"); 
 
-<?php
-include("includes/db.php");
- 
+	
+if(!isset($_SESSION['user_email'])){
+	echo "<script>window.open('login.php?not_admin=you are not an admin','_self')</script>";
+}
+
+else {
+
 if(isset($_GET['edit_brand'])){
 
 	$brand_id = $_GET['edit_brand']; 
@@ -10,9 +16,10 @@ if(isset($_GET['edit_brand'])){
 
 	$run_brand = mysqli_query($con, $get_brand); 
 	
-	$row_brand = mysqli_fetch_array($run_brand); 
+	$row_brand= mysqli_fetch_array($run_brand); 
 	
 	$brand_id = $row_brand['brand_id'];
+	
 	$brand_title = $row_brand['brand_title'];
 }
 
@@ -20,13 +27,13 @@ if(isset($_GET['edit_brand'])){
 ?>
 <form action="" method="post" style="padding:80px;">
 
-<b>Update Brand:</b>
-<input type="text" name="new_brand" value="<?php echo $brand_title;?>" /> 
+<b>Update Brand</b>
+<input type="text" name="new_brand" value=""/> 
 <input type="submit" name="update_brand" value="Update Brand" /> 
 
 </form>
 
-<?php 
+<?php  
 
 	if(isset($_POST['update_brand'])){
 	
@@ -46,3 +53,5 @@ if(isset($_GET['edit_brand'])){
 	}
 
 ?>
+
+<?php } ?>

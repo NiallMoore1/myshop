@@ -10,6 +10,14 @@
 <?php 
 include("includes/db.php"); 
 
+	
+if(!isset($_SESSION['user_email'])){
+	echo "<script>window.open('login.php?not_admin=you are not an admin','_self')</script>";
+}
+
+else {
+
+
 	if(isset($_POST['add_cat'])){
 	
 	$new_cat = $_POST['new_cat'];
@@ -26,3 +34,5 @@ include("includes/db.php");
 	}
 
 ?>
+
+<?php }?>

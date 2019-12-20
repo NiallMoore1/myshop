@@ -53,6 +53,7 @@ else {
 			
 			
 			<div id="left">
+			<h2 style="color:red; text-align:center;"><?php echo @$_GET['logged_in'];?></h2>
 			<?php 
 		if(isset($_GET['insert_product'])){
 		

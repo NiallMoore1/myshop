@@ -1,0 +1,35 @@
+
+Shop website            http://localhost/myshop/
+
+
+ADMIN PANEL             http://localhost/myshop/admin_area/
+
+
+INSERT NEW PRODUCT       http://localhost/myshop/admin_area/index.php?insert_product
+
+
+VIEW ALL PRODUCTS        http://localhost/myshop/admin_area/index.php?view_products
+
+
+INSERT NEW PRODUCTS      http://localhost/myshop/admin_area/index.php?insert_cat
+
+
+VIEW ALL CATEGORIES      http://localhost/myshop/admin_area/index.php?view_cats
+
+
+INSERT NEW BRAND         http://localhost/myshop/admin_area/index.php?insert_brand
+
+
+VIEW ALL BRANDS          http://localhost/myshop/admin_area/index.php?view_brands
+
+
+VIEW CUSTOMERS           http://localhost/myshop/admin_area/index.php?view_customers
+
+
+VIEW ORDERS               http://localhost/myshop/admin_area/index.php?view_orders
+
+
+VIEW PAYMENTS             http://localhost/myshop/admin_area/index.php?view_payments
+
+
+ADMIN LOGOUT              http://localhost/myshop/admin_area/logout.php

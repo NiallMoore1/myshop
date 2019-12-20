@@ -1,3 +1,13 @@
+
+<?php
+if(!isset($_SESSION['user_email'])){
+	echo "<script>window.open('login.php?not_admin=you are not an admin','_self')</script>";
+}
+
+else {
+
+
+?>
 <?php 
 	include("includes/db.php"); 
 	
@@ -22,3 +32,5 @@
 
 
 ?>
+
+<?php }?>

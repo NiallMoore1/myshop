@@ -1,5 +1,14 @@
 <?php
 include("includes/db.php");
+
+
+	
+if(!isset($_SESSION['user_email'])){
+	echo "<script>window.open('login.php?not_admin=you are not an admin','_self')</script>";
+}
+
+else {
+
  
 if(isset($_GET['edit_cat'])){
 
@@ -47,3 +56,5 @@ if(isset($_GET['edit_cat'])){
 	}
 
 ?>
+
+<?php }?>
